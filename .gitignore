@@ -1,4 +1,4 @@
 *.log
 *.db
-/dist
-/bin
+dist
+bin
