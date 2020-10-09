@@ -1,2 +1,2 @@
-#Functional tests
-##	for https://i-store.by/ website
+# Functional tests
+##	for https://www.e-katalog.ru/ website
