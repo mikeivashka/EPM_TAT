@@ -1,12 +1,12 @@
-package planes;
+package model;
 
 import java.util.Objects;
 
-abstract public class Plane {
+public abstract class Plane {
     private final int maxSpeed;
     private final int maxFlightDistance;
     private final int maxLoadCapacity;
-    String model;
+    private final String model;
 
     public Plane(String model, int maxSpeed, int maxFlightDistance, int maxLoadCapacity) {
         this.model = model;
@@ -19,7 +19,7 @@ abstract public class Plane {
         return model;
     }
 
-    public int getMS() {
+    public int getMaxSpeed() {
         return maxSpeed;
     }
 
@@ -56,4 +56,5 @@ abstract public class Plane {
     public int hashCode() {
         return Objects.hash(model, maxSpeed, maxFlightDistance, maxLoadCapacity);
     }
+
 }
