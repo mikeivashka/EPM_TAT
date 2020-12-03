@@ -1,0 +1,158 @@
+ноя 28, 2020 10:00:34 PM hudson.remoting.jnlp.Main createEngine
+INFO: Setting up agent: MikeIvashka-LAPTOP
+ноя 28, 2020 10:00:34 PM hudson.remoting.jnlp.Main$CuiListener <init>
+INFO: Jenkins agent is running in headless mode.
+ноя 28, 2020 10:00:34 PM hudson.remoting.Engine startEngine
+INFO: Using Remoting version: 4.5
+ноя 28, 2020 10:00:34 PM org.jenkinsci.remoting.engine.WorkDirManager initializeWorkDir
+INFO: Using D:\Studies\SEM_5\TaT\EPM_TAT\3.CI_with_Jenkins\slave\remoting as a remoting work directory
+ноя 28, 2020 10:00:34 PM hudson.remoting.jnlp.Main$CuiListener status
+INFO: Locating server among [http://MikeIvashka-LAPTOP:8081/]
+ноя 28, 2020 10:00:35 PM org.jenkinsci.remoting.engine.JnlpAgentEndpointResolver resolve
+INFO: Remoting server accepts the following protocols: [JNLP4-connect, Ping]
+ноя 28, 2020 10:00:35 PM hudson.remoting.jnlp.Main$CuiListener status
+INFO: Agent discovery successful
+  Agent address: MikeIvashka-LAPTOP
+  Agent port:    55847
+  Identity:      96:76:e9:26:f0:33:68:f0:8b:c8:88:45:d1:a0:dd:d3
+ноя 28, 2020 10:00:35 PM hudson.remoting.jnlp.Main$CuiListener status
+INFO: Handshaking
+ноя 28, 2020 10:00:35 PM hudson.remoting.jnlp.Main$CuiListener status
+INFO: Connecting to MikeIvashka-LAPTOP:55847
+ноя 28, 2020 10:00:35 PM hudson.remoting.jnlp.Main$CuiListener status
+INFO: Trying protocol: JNLP4-connect
+ноя 28, 2020 10:00:36 PM hudson.remoting.jnlp.Main$CuiListener status
+INFO: Remote identity confirmed: 96:76:e9:26:f0:33:68:f0:8b:c8:88:45:d1:a0:dd:d3
+ноя 28, 2020 10:00:36 PM hudson.remoting.jnlp.Main$CuiListener status
+INFO: Connected
+ноя 28, 2020 10:13:00 PM hudson.remoting.jnlp.Main$CuiListener status
+INFO: Terminated
+ноя 28, 2020 10:13:14 PM org.jenkinsci.remoting.engine.JnlpAgentEndpointResolver waitForReady
+INFO: Master isn't ready to talk to us on http://MikeIvashka-LAPTOP:8081/tcpSlaveAgentListener/. Will try again: response code=503
+ноя 28, 2020 10:13:25 PM hudson.remoting.jnlp.Main$CuiListener status
+INFO: Performing onReconnect operation.
+ноя 28, 2020 10:13:25 PM hudson.remoting.jnlp.Main$CuiListener status
+INFO: onReconnect operation completed.
+ноя 28, 2020 10:13:25 PM hudson.remoting.jnlp.Main$CuiListener status
+INFO: Locating server among [http://MikeIvashka-LAPTOP:8081/]
+ноя 28, 2020 10:13:25 PM org.jenkinsci.remoting.engine.JnlpAgentEndpointResolver resolve
+INFO: Remoting server accepts the following protocols: [JNLP4-connect, Ping]
+ноя 28, 2020 10:13:25 PM hudson.remoting.jnlp.Main$CuiListener status
+INFO: Agent discovery successful
+  Agent address: MikeIvashka-LAPTOP
+  Agent port:    56537
+  Identity:      96:76:e9:26:f0:33:68:f0:8b:c8:88:45:d1:a0:dd:d3
+ноя 28, 2020 10:13:25 PM hudson.remoting.jnlp.Main$CuiListener status
+INFO: Handshaking
+ноя 28, 2020 10:13:25 PM hudson.remoting.jnlp.Main$CuiListener status
+INFO: Connecting to MikeIvashka-LAPTOP:56537
+ноя 28, 2020 10:13:25 PM hudson.remoting.jnlp.Main$CuiListener status
+INFO: Trying protocol: JNLP4-connect
+ноя 28, 2020 10:13:26 PM hudson.remoting.jnlp.Main$CuiListener status
+INFO: Remote identity confirmed: 96:76:e9:26:f0:33:68:f0:8b:c8:88:45:d1:a0:dd:d3
+ноя 28, 2020 10:13:26 PM hudson.remoting.jnlp.Main$CuiListener status
+INFO: Connected
+ноя 28, 2020 10:14:30 PM org.jvnet.winp.Native loadByUrl
+WARNING: Failed to load DLL from static location
+java.lang.UnsatisfiedLinkError: Native Library D:\Studies\SEM_5\TaT\EPM_TAT\3.CI_with_Jenkins\slave\remoting\jarCache\44\winp.x64.BFFE30B3B50581290B1866EF8D48C609.dll already loaded in another classloader
+	at java.lang.ClassLoader.loadLibrary0(Unknown Source)
+	at java.lang.ClassLoader.loadLibrary(Unknown Source)
+	at java.lang.Runtime.load0(Unknown Source)
+	at java.lang.System.load(Unknown Source)
+	at org.jvnet.winp.Native.loadDll(Native.java:242)
+	at org.jvnet.winp.Native.loadByUrl(Native.java:162)
+	at org.jvnet.winp.Native.load(Native.java:124)
+	at org.jvnet.winp.Native.<clinit>(Native.java:93)
+	at org.jvnet.winp.WinProcess.enableDebugPrivilege(WinProcess.java:245)
+	at hudson.util.ProcessTree$Windows.<clinit>(ProcessTree.java:701)
+	at hudson.util.ProcessTree.get(ProcessTree.java:447)
+	at hudson.Launcher$RemoteLauncher$KillTask.call(Launcher.java:1164)
+	at hudson.Launcher$RemoteLauncher$KillTask.call(Launcher.java:1155)
+	at hudson.remoting.UserRequest.perform(UserRequest.java:211)
+	at hudson.remoting.UserRequest.perform(UserRequest.java:54)
+	at hudson.remoting.Request$2.run(Request.java:375)
+	at hudson.remoting.InterceptingExecutorService$1.call(InterceptingExecutorService.java:73)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at hudson.remoting.Engine$1.lambda$newThread$0(Engine.java:118)
+	at java.lang.Thread.run(Unknown Source)
+
+ноя 29, 2020 2:03:38 AM hudson.remoting.jnlp.Main$CuiListener status
+INFO: Terminated
+ноя 29, 2020 2:04:18 AM hudson.remoting.jnlp.Main$CuiListener status
+INFO: Performing onReconnect operation.
+ноя 29, 2020 2:04:18 AM hudson.remoting.jnlp.Main$CuiListener status
+INFO: onReconnect operation completed.
+ноя 29, 2020 2:04:18 AM hudson.remoting.jnlp.Main$CuiListener status
+INFO: Locating server among [http://MikeIvashka-LAPTOP:8081/]
+ноя 29, 2020 2:04:18 AM org.jenkinsci.remoting.engine.JnlpAgentEndpointResolver resolve
+INFO: Remoting server accepts the following protocols: [JNLP4-connect, Ping]
+ноя 29, 2020 2:04:18 AM hudson.remoting.jnlp.Main$CuiListener status
+INFO: Agent discovery successful
+  Agent address: MikeIvashka-LAPTOP
+  Agent port:    56537
+  Identity:      96:76:e9:26:f0:33:68:f0:8b:c8:88:45:d1:a0:dd:d3
+ноя 29, 2020 2:04:18 AM hudson.remoting.jnlp.Main$CuiListener status
+INFO: Handshaking
+ноя 29, 2020 2:04:18 AM hudson.remoting.jnlp.Main$CuiListener status
+INFO: Connecting to MikeIvashka-LAPTOP:56537
+ноя 29, 2020 2:04:18 AM hudson.remoting.jnlp.Main$CuiListener status
+INFO: Trying protocol: JNLP4-connect
+ноя 29, 2020 2:49:42 AM hudson.remoting.jnlp.Main$CuiListener status
+INFO: Remote identity confirmed: 96:76:e9:26:f0:33:68:f0:8b:c8:88:45:d1:a0:dd:d3
+ноя 29, 2020 2:49:43 AM hudson.remoting.jnlp.Main$CuiListener status
+INFO: Connected
+ноя 29, 2020 3:19:39 AM hudson.remoting.Request$2 run
+INFO: Failed to send back a reply to the request hudson.remoting.Request$2@7be5e9f9: hudson.remoting.ChannelClosedException: Channel "unknown": Protocol stack cannot write data anymore. It is not open for write
+ноя 29, 2020 3:19:39 AM hudson.remoting.Request$2 run
+INFO: Failed to send back a reply to the request hudson.remoting.Request$2@4b3e92c1: hudson.remoting.ChannelClosedException: Channel "hudson.remoting.Channel@156ed324:JNLP4-connect connection to MikeIvashka-LAPTOP/192.168.100.4:56537": channel is already closed
+ноя 29, 2020 3:19:39 AM hudson.remoting.jnlp.Main$CuiListener status
+INFO: Terminated
+ноя 29, 2020 3:19:39 AM hudson.remoting.Request$2 run
+INFO: Failed to send back a reply to the request hudson.remoting.Request$2@53c7bb38: hudson.remoting.ChannelClosedException: Channel "unknown": Protocol stack cannot write data anymore. It is not open for write
+ноя 29, 2020 3:19:39 AM hudson.remoting.Request$2 run
+INFO: Failed to send back a reply to the request hudson.remoting.Request$2@107d5f80: hudson.remoting.ChannelClosedException: Channel "hudson.remoting.Channel@156ed324:JNLP4-connect connection to MikeIvashka-LAPTOP/192.168.100.4:56537": channel is already closed
+ноя 29, 2020 3:19:49 AM hudson.remoting.jnlp.Main$CuiListener status
+INFO: Performing onReconnect operation.
+ноя 29, 2020 3:19:49 AM hudson.remoting.jnlp.Main$CuiListener status
+INFO: onReconnect operation completed.
+ноя 29, 2020 3:19:49 AM hudson.remoting.jnlp.Main$CuiListener status
+INFO: Locating server among [http://MikeIvashka-LAPTOP:8081/]
+ноя 29, 2020 3:19:50 AM org.jenkinsci.remoting.engine.JnlpAgentEndpointResolver resolve
+INFO: Remoting server accepts the following protocols: [JNLP4-connect, Ping]
+ноя 29, 2020 3:19:50 AM hudson.remoting.jnlp.Main$CuiListener status
+INFO: Agent discovery successful
+  Agent address: MikeIvashka-LAPTOP
+  Agent port:    56537
+  Identity:      96:76:e9:26:f0:33:68:f0:8b:c8:88:45:d1:a0:dd:d3
+ноя 29, 2020 3:19:50 AM hudson.remoting.jnlp.Main$CuiListener status
+INFO: Handshaking
+ноя 29, 2020 3:19:50 AM hudson.remoting.jnlp.Main$CuiListener status
+INFO: Connecting to MikeIvashka-LAPTOP:56537
+ноя 29, 2020 3:19:50 AM hudson.remoting.jnlp.Main$CuiListener status
+INFO: Trying protocol: JNLP4-connect
+ноя 29, 2020 3:20:00 AM hudson.remoting.jnlp.Main$CuiListener status
+INFO: Protocol JNLP4-connect encountered an unexpected exception
+java.util.concurrent.ExecutionException: org.jenkinsci.remoting.protocol.impl.ConnectionRefusalException: Connection closed before acknowledgement sent
+	at org.jenkinsci.remoting.util.SettableFuture.get(SettableFuture.java:223)
+	at hudson.remoting.Engine.innerRun(Engine.java:744)
+	at hudson.remoting.Engine.run(Engine.java:519)
+Caused by: org.jenkinsci.remoting.protocol.impl.ConnectionRefusalException: Connection closed before acknowledgement sent
+	at org.jenkinsci.remoting.protocol.impl.AckFilterLayer.onRecvClosed(AckFilterLayer.java:283)
+	at org.jenkinsci.remoting.protocol.FilterLayer.abort(FilterLayer.java:164)
+	at org.jenkinsci.remoting.protocol.impl.AckFilterLayer.access$000(AckFilterLayer.java:45)
+	at org.jenkinsci.remoting.protocol.impl.AckFilterLayer$1.run(AckFilterLayer.java:179)
+	at org.jenkinsci.remoting.protocol.IOHub$DelayedRunnable.run(IOHub.java:964)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at hudson.remoting.Engine$1.lambda$newThread$0(Engine.java:118)
+	at java.lang.Thread.run(Unknown Source)
+
+ноя 29, 2020 3:20:00 AM hudson.remoting.jnlp.Main$CuiListener error
+SEVERE: The server rejected the connection: None of the protocols were accepted
+java.lang.Exception: The server rejected the connection: None of the protocols were accepted
+	at hudson.remoting.Engine.onConnectionRejected(Engine.java:829)
+	at hudson.remoting.Engine.innerRun(Engine.java:769)
+	at hudson.remoting.Engine.run(Engine.java:519)
+

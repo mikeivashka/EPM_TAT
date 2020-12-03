@@ -1,0 +1,42 @@
+Started by user [8mha:////4Bv0LtITh4irOjVbI1A4j/mw7J7cTSXyWNK2H/NSBjOIAAAAnR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzxEgZB/dLi1CL93Mzs1MyyxOKM7EQAdD1Lo8YAAAA=[0mИвашко Михаил Вадимович
+Running as SYSTEM
+Собирается удаленно на [8mha:////4Hl1rRjY8GCnkKmefWABrDGUOn4YulSsrfYdx+s7xcbkAAAAqB+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAyhEgYZ/eT83ILSktQifd/M7FTPssTijOxEXR/HgBD/AABYu4Q30QAAAA==[0mMikeIvashka-LAPTOP (edge opera chrome win10 yandex x64 mozilla) in workspace D:\Studies\SEM_5\TaT\EPM_TAT\3.CI_with_Jenkins\slave\workspace\Github project
+The recommended git tool is: NONE
+No credentials specified
+ > C:\Program Files\Git\cmd\git.exe rev-parse --is-inside-work-tree # timeout=10
+Fetching changes from the remote Git repository
+ > C:\Program Files\Git\cmd\git.exe config remote.origin.url https://github.com/vitalliuss/helloci.git # timeout=10
+Fetching upstream changes from https://github.com/vitalliuss/helloci.git
+ > C:\Program Files\Git\cmd\git.exe --version # timeout=10
+ > git --version # 'git version 2.29.2.windows.1'
+ > C:\Program Files\Git\cmd\git.exe fetch --tags --force --progress -- https://github.com/vitalliuss/helloci.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > C:\Program Files\Git\cmd\git.exe rev-parse "refs/remotes/origin/master^{commit}" # timeout=10
+Checking out Revision 904af05dec9a5818276ac39c6faf97fe5a5e13ba (refs/remotes/origin/master)
+ > C:\Program Files\Git\cmd\git.exe config core.sparsecheckout # timeout=10
+ > C:\Program Files\Git\cmd\git.exe checkout -f 904af05dec9a5818276ac39c6faf97fe5a5e13ba # timeout=10
+Commit message: "Merge pull request #15 from Molnix888/dotnet-update"
+ > C:\Program Files\Git\cmd\git.exe rev-list --no-walk 904af05dec9a5818276ac39c6faf97fe5a5e13ba # timeout=10
+[Github project] $ cmd.exe /C '""C:\Program Files\Java\apache-maven-3.6.3\bin\mvn.cmd"' cobertura:cobertura && exit %%ERRORLEVEL%%"
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------< org.apache.maven:standalone-pom >-------------------
+[INFO] Building Maven Stub Project (No POM) 1
+[INFO] --------------------------------[ pom ]---------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  0.402 s
+[INFO] Finished at: 2020-11-28T22:32:05+03:00
+[INFO] ------------------------------------------------------------------------
+[8mha:////4PjxsQyqk3CDDzFFM/wecMmusGnEQuTxtsGuXLEOH7dAAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEuhYV5Rf55ZekOlc7RKnPKH7IxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAACsNFCqYAAAAA==[0m[ERROR] Failed to execute goal org.codehaus.mojo:cobertura-maven-plugin:2.7:cobertura (default-cli): Goal requires a project to execute but there is no POM in this directory (D:\Studies\SEM_5\TaT\EPM_TAT\3.CI_with_Jenkins\slave\workspace\Github project). Please verify you invoked Maven from the correct directory. -> [Help 1]
+[8mha:////4PjxsQyqk3CDDzFFM/wecMmusGnEQuTxtsGuXLEOH7dAAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEuhYV5Rf55ZekOlc7RKnPKH7IxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAACsNFCqYAAAAA==[0m[ERROR] 
+[8mha:////4PjxsQyqk3CDDzFFM/wecMmusGnEQuTxtsGuXLEOH7dAAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEuhYV5Rf55ZekOlc7RKnPKH7IxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAACsNFCqYAAAAA==[0m[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[8mha:////4PjxsQyqk3CDDzFFM/wecMmusGnEQuTxtsGuXLEOH7dAAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEuhYV5Rf55ZekOlc7RKnPKH7IxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAACsNFCqYAAAAA==[0m[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[8mha:////4PjxsQyqk3CDDzFFM/wecMmusGnEQuTxtsGuXLEOH7dAAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEuhYV5Rf55ZekOlc7RKnPKH7IxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAACsNFCqYAAAAA==[0m[ERROR] 
+[8mha:////4PjxsQyqk3CDDzFFM/wecMmusGnEQuTxtsGuXLEOH7dAAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEuhYV5Rf55ZekOlc7RKnPKH7IxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAACsNFCqYAAAAA==[0m[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[8mha:////4PjxsQyqk3CDDzFFM/wecMmusGnEQuTxtsGuXLEOH7dAAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEuhYV5Rf55ZekOlc7RKnPKH7IxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAACsNFCqYAAAAA==[0m[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MissingProjectException
+Build step 'Вызвать цели Maven верхнего уровня  ' marked build as failure
+[Cobertura] Publishing Cobertura coverage report...
+
+Archiving artifacts
+Finished: FAILURE

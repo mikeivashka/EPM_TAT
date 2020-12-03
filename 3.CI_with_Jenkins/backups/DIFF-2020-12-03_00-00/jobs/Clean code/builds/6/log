@@ -1,0 +1,64 @@
+Started by user [8mha:////4Bv0LtITh4irOjVbI1A4j/mw7J7cTSXyWNK2H/NSBjOIAAAAnR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzxEgZB/dLi1CL93Mzs1MyyxOKM7EQAdD1Lo8YAAAA=[0mИвашко Михаил Вадимович
+Running as SYSTEM
+Building on master in workspace C:\WINDOWS\system32\config\systemprofile\AppData\Local\Jenkins\.jenkins\workspace\Clean code
+The recommended git tool is: NONE
+No credentials specified
+ > C:\Program Files\Git\cmd\git.exe rev-parse --is-inside-work-tree # timeout=10
+Fetching changes from the remote Git repository
+ > C:\Program Files\Git\cmd\git.exe config remote.origin.url https://github.com/mikeivashka/EPM_TAT # timeout=10
+Fetching upstream changes from https://github.com/mikeivashka/EPM_TAT
+ > C:\Program Files\Git\cmd\git.exe --version # timeout=10
+ > git --version # 'git version 2.29.2.windows.1'
+ > C:\Program Files\Git\cmd\git.exe fetch --tags --force --progress -- https://github.com/mikeivashka/EPM_TAT +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > C:\Program Files\Git\cmd\git.exe rev-parse "refs/remotes/origin/master^{commit}" # timeout=10
+Checking out Revision 1a5c736d4840e601688fa4ad33e9e8fddc7450b9 (refs/remotes/origin/master)
+ > C:\Program Files\Git\cmd\git.exe config core.sparsecheckout # timeout=10
+ > C:\Program Files\Git\cmd\git.exe checkout -f 1a5c736d4840e601688fa4ad33e9e8fddc7450b9 # timeout=10
+Commit message: "Clean code completed"
+ > C:\Program Files\Git\cmd\git.exe rev-list --no-walk 4fd80b2f3c377e8952d020d1aed3ee23caeffb34 # timeout=10
+[Clean code] $ cmd.exe /C '""C:\Program Files\Java\apache-maven-3.6.3\bin\mvn.cmd"' -f '"6. Clean code/pom.xml"' test && exit %%ERRORLEVEL%%"
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------< com.github.vitalliuss:aircompany >------------------
+[INFO] Building aircompany 1.0-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[8mha:////4HSEAJsBbWgqF1gmk3RwWOpE83nEG0IluiTUZiWyLqSVAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ aircompany ---
+[8mha:////4H87Z951OLc7G7r4IFtRFcGx4WLjA4ytOZehfd/klW9yAAAAYx+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vJLE4u1gvPjexLDVPzxdEhicW5WXmpfvll6S2fNly5fzGzauYGBgqihikoFqS8/OK83NS9ZwhNEghAwQwghQWAACwxA+XYgAAAA==[0m[WARNING] Using platform encoding (Cp1251 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] skip non existing resourceDirectory C:\Windows\System32\config\systemprofile\AppData\Local\Jenkins\.jenkins\workspace\Clean code\6. Clean code\src\main\resources
+[INFO] 
+[8mha:////4HSEAJsBbWgqF1gmk3RwWOpE83nEG0IluiTUZiWyLqSVAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ aircompany ---
+[INFO] Changes detected - recompiling the module!
+[8mha:////4H87Z951OLc7G7r4IFtRFcGx4WLjA4ytOZehfd/klW9yAAAAYx+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vJLE4u1gvPjexLDVPzxdEhicW5WXmpfvll6S2fNly5fzGzauYGBgqihikoFqS8/OK83NS9ZwhNEghAwQwghQWAACwxA+XYgAAAA==[0m[WARNING] File encoding has not been set, using platform encoding Cp1251, i.e. build is platform dependent!
+[INFO] Compiling 10 source files to C:\Windows\System32\config\systemprofile\AppData\Local\Jenkins\.jenkins\workspace\Clean code\6. Clean code\target\classes
+[INFO] 
+[8mha:////4HSEAJsBbWgqF1gmk3RwWOpE83nEG0IluiTUZiWyLqSVAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ aircompany ---
+[8mha:////4H87Z951OLc7G7r4IFtRFcGx4WLjA4ytOZehfd/klW9yAAAAYx+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vJLE4u1gvPjexLDVPzxdEhicW5WXmpfvll6S2fNly5fzGzauYGBgqihikoFqS8/OK83NS9ZwhNEghAwQwghQWAACwxA+XYgAAAA==[0m[WARNING] Using platform encoding (Cp1251 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] skip non existing resourceDirectory C:\Windows\System32\config\systemprofile\AppData\Local\Jenkins\.jenkins\workspace\Clean code\6. Clean code\src\test\resources
+[INFO] 
+[8mha:////4HSEAJsBbWgqF1gmk3RwWOpE83nEG0IluiTUZiWyLqSVAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ aircompany ---
+[INFO] Changes detected - recompiling the module!
+[8mha:////4H87Z951OLc7G7r4IFtRFcGx4WLjA4ytOZehfd/klW9yAAAAYx+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vJLE4u1gvPjexLDVPzxdEhicW5WXmpfvll6S2fNly5fzGzauYGBgqihikoFqS8/OK83NS9ZwhNEghAwQwghQWAACwxA+XYgAAAA==[0m[WARNING] File encoding has not been set, using platform encoding Cp1251, i.e. build is platform dependent!
+[INFO] Compiling 1 source file to C:\Windows\System32\config\systemprofile\AppData\Local\Jenkins\.jenkins\workspace\Clean code\6. Clean code\target\test-classes
+[INFO] 
+[8mha:////4HSEAJsBbWgqF1gmk3RwWOpE83nEG0IluiTUZiWyLqSVAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEGvvmZ+X75ZekLlOVfvTjc8FPJgaGiiIGKaiG5Py84vycVD1nCA1SyAABjCCFBQCV27OjYAAAAA==[0m[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ aircompany ---
+[INFO] Surefire report directory: C:\Windows\System32\config\systemprofile\AppData\Local\Jenkins\.jenkins\workspace\Clean code\6. Clean code\target\surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running AirportTest
+Configuring TestNG with: org.apache.maven.surefire.testng.conf.TestNG652Configurator@6a6824be
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.818 sec
+
+Results :
+
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  5.683 s
+[INFO] Finished at: 2020-11-29T14:39:34+03:00
+[INFO] ------------------------------------------------------------------------
+Finished: SUCCESS
