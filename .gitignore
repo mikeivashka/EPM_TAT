@@ -2,3 +2,6 @@
 *.db
 dist
 bin
+.idea
+*.iml
+target
