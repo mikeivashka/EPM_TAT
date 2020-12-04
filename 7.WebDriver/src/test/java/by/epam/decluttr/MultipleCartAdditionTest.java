@@ -56,6 +56,9 @@ class MultipleCartAdditionTest extends Assertions {
                                 s.replaceAll(",", "").substring(1, s.length() - 3))
         );
         assertEquals(firstProductPrice, inCartTotalWithFirstProduct);
+        WebElement continueShoppingButton = driver.findElement(By.linkText("Continue Shopping"));
+        continueShoppingButton.click();
+        assertFalse(modalBody.isDisplayed());
 
     }
 }
