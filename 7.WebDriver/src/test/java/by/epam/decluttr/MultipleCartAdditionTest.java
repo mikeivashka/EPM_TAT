@@ -8,29 +8,37 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.LinkedList;
+import java.util.List;
 
-class MultipleCartAdditionTest extends Assertions {
+class MultipleCartAdditionNotAuthorizedTest extends Assertions {
 
-    public static final String FIRST_PRODUCT_PAGE = "https://www.decluttr.com/us/store/products/apple-iphone-x-256gb-space-grey-unlocked-64244e81-1188-4719-8c2f-b62505bea0e6";
-    public static final String SECOND_PRODUCT_PAGE = "https://www.decluttr.com/us/store/products/samsung-galaxy-s20-ultra-5g-128gb-cosmic-black-unlocked-b951d712-a716-4961-ad1a-47257612a71f";
+    public static final String FIRST_PRODUCT_PAGE = "https://www.decluttr.com/us/store/products/lg-v35-thinq-64gb-aurora-black-at-t-8f64d689-6d54-4ee0-9548-4aaac66117b0";
+    public static final String SECOND_PRODUCT_PAGE = "https://www.decluttr.com/us/store/products/lg-g7-thinq-64gb-moroccan-blue-unlocked";
     private static WebDriver driver;
 
     @BeforeAll
     static void setUp() {
-        //Setting driver location for Windows machines
         String currentDir = System.getProperty("user.dir");
         System.setProperty("webdriver.chrome.driver", currentDir + "\\chromedriver.exe");
         driver = new ChromeDriver();
-        //Entering fullscreen mode
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));
     }
 
     @AfterAll
     public static void tearDown() {
         driver.quit();
+    }
+
+    private static WebElement waitForElementLocatedBy(WebDriver driver, By by) {
+        return new WebDriverWait(driver, Duration.ofSeconds(10))
+                .until(ExpectedConditions
+                        .visibilityOfElementLocated(by));
     }
 
     @Test
@@ -46,19 +54,69 @@ class MultipleCartAdditionTest extends Assertions {
         );
         assertTrue(addToCartButton.isDisplayed());
         addToCartButton.click();
-        WebElement modalBody = driver.findElement(By.className("modal-body"));
+
+        WebElement modalBody = waitForElementLocatedBy(driver, By.className("modal-body"));
         assertTrue(modalBody.isDisplayed());
+
         Double inCartTotalWithFirstProduct = Double.parseDouble(
+                driver
+                        .findElement(By.xpath("//h3[@class='mbottom total-display']/span[2]"))
+                        .getText()
+                        .transform(s ->
+                                s.replaceAll(",", "").substring(1, s.length() - 4))
+        );
+        assertEquals(firstProductPrice, inCartTotalWithFirstProduct);
+
+        WebElement continueShoppingButton = driver.findElement(By.linkText("Continue Shopping"));
+        continueShoppingButton.click();
+        assertFalse(modalBody.isDisplayed());
+
+        new WebDriverWait(driver, Duration.ofSeconds(15))
+                .until(ExpectedConditions
+                        .textToBePresentInElementLocated(By
+                                .xpath("//span[contains(@class, 'stat')]"), inCartTotalWithFirstProduct.toString()
+                        )
+                );
+        assertEquals(firstProductPrice, inCartTotalWithFirstProduct);
+
+        WebElement cartButton = driver.findElement(By.partialLinkText("CART"));
+        assertTrue(cartButton.getText().endsWith("(1)"));
+
+        driver.get(SECOND_PRODUCT_PAGE);
+        Double secondProductPrice = Double.parseDouble(
+                driver
+                        .findElement(By.id("variant-price"))
+                        .getText()
+                        .substring(1)
+                        .replace(",", "")
+        );
+
+        addToCartButton = driver.findElement(By.name("button"));
+        addToCartButton.click();
+
+        modalBody = waitForElementLocatedBy(driver, By.className("modal-body"));
+        assertTrue(modalBody.isDisplayed());
+
+        Double inCartTotalWithBothProducts = Double.parseDouble(
                 driver
                         .findElement(By.xpath("//h3[@class='mbottom total-display']/span[2]"))
                         .getText()
                         .transform(s ->
                                 s.replaceAll(",", "").substring(1, s.length() - 3))
         );
-        assertEquals(firstProductPrice, inCartTotalWithFirstProduct);
-        WebElement continueShoppingButton = driver.findElement(By.linkText("Continue Shopping"));
-        continueShoppingButton.click();
-        assertFalse(modalBody.isDisplayed());
+        assertEquals(firstProductPrice + secondProductPrice, inCartTotalWithBothProducts);
 
+        WebElement checkoutButton = driver.findElement(By.linkText("Checkout Now"));
+        checkoutButton.click();
+        assertEquals("https://www.decluttr.com/us/store/cart", driver.getCurrentUrl());
+
+        List<WebElement> cartItemsLinks = driver.findElements(By.xpath("//div[@class='basket__item']/*/*/*/strong/a"));
+        List<String> cartItemsLinkStrings = new LinkedList<>();
+        cartItemsLinks.forEach(i -> cartItemsLinkStrings.add(i.getAttribute("href")));
+        assertArrayEquals(new String[]{FIRST_PRODUCT_PAGE, SECOND_PRODUCT_PAGE}, cartItemsLinkStrings.toArray());
+
+        WebElement checkoutSecurelyButton = driver.findElement(By.id("checkout-btn2"));
+        checkoutSecurelyButton.click();
+        assertTrue(driver.getCurrentUrl().startsWith("https://www.decluttr.com/login"));
     }
 }
