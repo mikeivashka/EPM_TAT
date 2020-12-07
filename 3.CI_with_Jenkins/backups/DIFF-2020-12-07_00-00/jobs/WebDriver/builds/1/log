@@ -1,0 +1,41 @@
+Started by user [8mha:////4Bv0LtITh4irOjVbI1A4j/mw7J7cTSXyWNK2H/NSBjOIAAAAnR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzxEgZB/dLi1CL93Mzs1MyyxOKM7EQAdD1Lo8YAAAA=[0mИвашко Михаил Вадимович
+Running as SYSTEM
+Building on master in workspace C:\WINDOWS\system32\config\systemprofile\AppData\Local\Jenkins\.jenkins\workspace\WebDriver
+The recommended git tool is: NONE
+No credentials specified
+Cloning the remote Git repository
+Cloning repository https://github.com/mikeivashka/EPM_TAT
+ > C:\Program Files\Git\cmd\git.exe init C:\WINDOWS\system32\config\systemprofile\AppData\Local\Jenkins\.jenkins\workspace\WebDriver # timeout=10
+Fetching upstream changes from https://github.com/mikeivashka/EPM_TAT
+ > C:\Program Files\Git\cmd\git.exe --version # timeout=10
+ > git --version # 'git version 2.29.2.windows.1'
+ > C:\Program Files\Git\cmd\git.exe fetch --tags --force --progress -- https://github.com/mikeivashka/EPM_TAT +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > C:\Program Files\Git\cmd\git.exe config remote.origin.url https://github.com/mikeivashka/EPM_TAT # timeout=10
+ > C:\Program Files\Git\cmd\git.exe config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
+Avoid second fetch
+ > C:\Program Files\Git\cmd\git.exe rev-parse "refs/remotes/origin/master^{commit}" # timeout=10
+Checking out Revision 8c8807343c200194ea3e5dfd91cb438b603f5c3e (refs/remotes/origin/master)
+ > C:\Program Files\Git\cmd\git.exe config core.sparsecheckout # timeout=10
+ > C:\Program Files\Git\cmd\git.exe checkout -f 8c8807343c200194ea3e5dfd91cb438b603f5c3e # timeout=10
+Commit message: "WebDriver started"
+First time build. Skipping changelog.
+[WebDriver] $ cmd.exe /C '""C:\Program Files\Java\apache-maven-3.6.3\bin\mvn.cmd"' -f 7.WebDriver/pom.xml -D-Dcobertura.report.format=xml cobertura:cobertura && exit %%ERRORLEVEL%%"
+[INFO] Scanning for projects...
+[8mha:////4PjxsQyqk3CDDzFFM/wecMmusGnEQuTxtsGuXLEOH7dAAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEuhYV5Rf55ZekOlc7RKnPKH7IxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAACsNFCqYAAAAA==[0m[ERROR] [ERROR] Some problems were encountered while processing the POMs:
+[8mha:////4H87Z951OLc7G7r4IFtRFcGx4WLjA4ytOZehfd/klW9yAAAAYx+LCAAAAAAAAP9b85aBtbiIQSWjNKU4P0+vJLE4u1gvPjexLDVPzxdEhicW5WXmpfvll6S2fNly5fzGzauYGBgqihikoFqS8/OK83NS9ZwhNEghAwQwghQWAACwxA+XYgAAAA==[0m[WARNING] 'dependencies.dependency.version' for org.projectlombok:lombok:jar is either LATEST or RELEASE (both of them are being deprecated) @ line 42, column 22
+[FATAL] 'dependencies.dependency[by.epam:webdriver:1.0-SNAPSHOT]' for by.epam:webdriver:1.0-SNAPSHOT is referencing itself. @ line 33, column 21
+ @ 
+[8mha:////4PjxsQyqk3CDDzFFM/wecMmusGnEQuTxtsGuXLEOH7dAAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEuhYV5Rf55ZekOlc7RKnPKH7IxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAACsNFCqYAAAAA==[0m[ERROR] The build could not read 1 project -> [Help 1]
+[8mha:////4PjxsQyqk3CDDzFFM/wecMmusGnEQuTxtsGuXLEOH7dAAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEuhYV5Rf55ZekOlc7RKnPKH7IxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAACsNFCqYAAAAA==[0m[ERROR]   
+[8mha:////4PjxsQyqk3CDDzFFM/wecMmusGnEQuTxtsGuXLEOH7dAAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEuhYV5Rf55ZekOlc7RKnPKH7IxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAACsNFCqYAAAAA==[0m[ERROR]   The project by.epam:webdriver:1.0-SNAPSHOT (C:\Windows\System32\config\systemprofile\AppData\Local\Jenkins\.jenkins\workspace\WebDriver\7.WebDriver\pom.xml) has 1 error
+[8mha:////4PjxsQyqk3CDDzFFM/wecMmusGnEQuTxtsGuXLEOH7dAAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEuhYV5Rf55ZekOlc7RKnPKH7IxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAACsNFCqYAAAAA==[0m[ERROR]     'dependencies.dependency[by.epam:webdriver:1.0-SNAPSHOT]' for by.epam:webdriver:1.0-SNAPSHOT is referencing itself. @ line 33, column 21
+[8mha:////4PjxsQyqk3CDDzFFM/wecMmusGnEQuTxtsGuXLEOH7dAAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEuhYV5Rf55ZekOlc7RKnPKH7IxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAACsNFCqYAAAAA==[0m[ERROR] 
+[8mha:////4PjxsQyqk3CDDzFFM/wecMmusGnEQuTxtsGuXLEOH7dAAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEuhYV5Rf55ZekOlc7RKnPKH7IxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAACsNFCqYAAAAA==[0m[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[8mha:////4PjxsQyqk3CDDzFFM/wecMmusGnEQuTxtsGuXLEOH7dAAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEuhYV5Rf55ZekOlc7RKnPKH7IxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAACsNFCqYAAAAA==[0m[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[8mha:////4PjxsQyqk3CDDzFFM/wecMmusGnEQuTxtsGuXLEOH7dAAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEuhYV5Rf55ZekOlc7RKnPKH7IxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAACsNFCqYAAAAA==[0m[ERROR] 
+[8mha:////4PjxsQyqk3CDDzFFM/wecMmusGnEQuTxtsGuXLEOH7dAAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEuhYV5Rf55ZekOlc7RKnPKH7IxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAACsNFCqYAAAAA==[0m[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[8mha:////4PjxsQyqk3CDDzFFM/wecMmusGnEQuTxtsGuXLEOH7dAAAAAYB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P0+vJLE4u1gvPjexLDVPzxdEuhYV5Rf55ZekOlc7RKnPKH7IxMBQUcQgBdWQnJ9XnJ+TqucMoUEKGSCAEaSwAACsNFCqYAAAAA==[0m[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/ProjectBuildingException
+Build step 'Вызвать цели Maven верхнего уровня  ' marked build as failure
+[Cobertura] Publishing Cobertura coverage report...
+
+Finished: FAILURE

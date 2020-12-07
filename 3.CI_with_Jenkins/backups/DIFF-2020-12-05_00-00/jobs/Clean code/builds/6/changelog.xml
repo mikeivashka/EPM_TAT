@@ -1,0 +1,24 @@
+commit 1a5c736d4840e601688fa4ad33e9e8fddc7450b9
+tree 322b21b3e4deb73ee7dddb486ef68b56e9141aed
+parent 4fd80b2f3c377e8952d020d1aed3ee23caeffb34
+author Mikhail Ivashka <mike.ivashka@gmail.com> 2020-11-29 14:38:54 +0300
+committer Mikhail Ivashka <mike.ivashka@gmail.com> 2020-11-29 14:38:54 +0300
+
+    Clean code completed
+
+
+:100644 000000 c3332431a8b6699e0fea9ee418a320005ed1cf20 0000000000000000000000000000000000000000 D	6. Clean Code/src/main/java/Airport.java
+:100644 000000 8a8ff3a859bb95efac4b675cc9336c2148866ca6 0000000000000000000000000000000000000000 D	6. Clean Code/src/main/java/Runner.java
+:100644 100644 97283d637f0a5327949cfb4c559e0e18381331e6 d72401f9d1d8cbf82a0d032d6981d8cfef3380cf R078	6. Clean Code/src/main/java/models/ClassificationLevel.java	6. Clean Code/src/main/java/enumerations/ClassificationLevel.java
+:000000 100644 0000000000000000000000000000000000000000 97a624d6b683249f7480f0a0d4d79ff79df733e4 A	6. Clean Code/src/main/java/enumerations/ExperimentalType.java
+:100644 100644 8ecfa989321e028fdbb748a730e4bfe05c3bc81c 890c75ac2b2a4f55b26fb8cd90e65a9ee5702a1c R071	6. Clean Code/src/main/java/models/MilitaryType.java	6. Clean Code/src/main/java/enumerations/MilitaryType.java
+:000000 100644 0000000000000000000000000000000000000000 41028ed9e62fd2830eb104e6127db51bc5a8f5c1 A	6. Clean Code/src/main/java/model/Airport.java
+:100644 100644 ccf4fbac1c153eee4e76d221037f8ae66c9ad315 768d47dfd07506b6aa083e5581e1ffff251153cf R074	6. Clean Code/src/main/java/planes/ExperimentalPlane.java	6. Clean Code/src/main/java/model/ExperimentalPlane.java
+:100644 100644 50947c4211ebf2172566728077eb802ba970b343 c5c738045b48357d750ffbf829f33cc2108e515c R076	6. Clean Code/src/main/java/planes/MilitaryPlane.java	6. Clean Code/src/main/java/model/MilitaryPlane.java
+:100644 100644 8357b4e92f1b051340ce762a518dc28b7f046d60 aa4012e02becf94c4d1172d47638ffa7f9b26640 R071	6. Clean Code/src/main/java/planes/PassengerPlane.java	6. Clean Code/src/main/java/model/PassengerPlane.java
+:100644 100644 49d71e07c4e464d5c92c30f448dbb3b3c6b84c98 13550af8e6c94dd83eec7c9c3d2f90b9cfdc509e R093	6. Clean Code/src/main/java/planes/Plane.java	6. Clean Code/src/main/java/model/Plane.java
+:100644 000000 a75b52f16f895379e122fff7a2e89af026f2a7c8 0000000000000000000000000000000000000000 D	6. Clean Code/src/main/java/models/ExperimentalTypes.java
+:100644 000000 92a8cd53e344d9b1bbfb2a89bd6f55245508a557 0000000000000000000000000000000000000000 D	6. Clean Code/src/main/java/planes/MyPlane.java
+:000000 100644 0000000000000000000000000000000000000000 5f9e6dc3570bb99fe4c0b97c934b9d2b5735327d A	6. Clean Code/src/main/java/runner/Runner.java
+:000000 100644 0000000000000000000000000000000000000000 bb8cde48b55a4e4f4cb4bcb92a51faf6cb311732 A	6. Clean Code/src/main/java/service/AirportService.java
+:100644 100644 0baf95e6ef0de52bb40203ae6f630303ed0eb112 e499cf937d6f56a7c34222159f7c2305eb66bc57 M	6. Clean Code/src/test/java/AirportTest.java

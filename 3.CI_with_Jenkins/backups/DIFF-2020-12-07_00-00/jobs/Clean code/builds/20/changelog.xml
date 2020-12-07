@@ -1,0 +1,10 @@
+commit 72353712fba12883147593ebcf10a3b23f83948f
+tree 9f7faf83969883effc3976f98deb7836cf2e7c4a
+parent 030a5418c692ecf9ecd69e8d42bad24f324b4bd2
+author Mikhail Ivashka <mike.ivashka@gmail.com> 2020-12-04 21:17:15 +0300
+committer Mikhail Ivashka <mike.ivashka@gmail.com> 2020-12-04 21:17:15 +0300
+
+    [decluttr-4]Test implemented completely and works
+
+
+:100644 100644 23fe747f0cc0f363aa5c2e5829f9e5379962e016 d8966371e8fc93a3635ae038ae09c354b044ff00 M	7.WebDriver/src/test/java/by/epam/decluttr/MultipleCartAdditionTest.java

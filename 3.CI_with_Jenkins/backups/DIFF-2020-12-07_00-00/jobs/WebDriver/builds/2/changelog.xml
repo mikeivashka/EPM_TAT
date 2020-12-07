@@ -1,0 +1,11 @@
+commit a854ab46878524f6f17bc70c71fc2446bb1a48d7
+tree 8ebb929890a9703fdad12f55341f08c68bd45ae7
+parent 8c8807343c200194ea3e5dfd91cb438b603f5c3e
+author Mikhail Ivashka <mike.ivashka@gmail.com> 2020-12-04 12:24:27 +0300
+committer Mikhail Ivashka <mike.ivashka@gmail.com> 2020-12-04 12:24:27 +0300
+
+    First product addition to cart implemented
+
+
+:100644 100644 07cc538b379ec581773fc6c7b7729808c0a390bd f347674c01274fdd84bbe4a8f305614095a95170 M	7.WebDriver/pom.xml
+:100644 100644 4b15ffb55f7a257d73fce888b05363a13e693c41 23fe747f0cc0f363aa5c2e5829f9e5379962e016 M	7.WebDriver/src/test/java/by/epam/decluttr/MultipleCartAdditionTest.java
