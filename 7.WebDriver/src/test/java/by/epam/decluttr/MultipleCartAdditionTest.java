@@ -36,7 +36,7 @@ class MultipleCartAdditionNotAuthorizedTest extends Assertions {
     }
 
     private static WebElement waitForElementLocatedBy(WebDriver driver, By by) {
-        return new WebDriverWait(driver, Duration.ofSeconds(10))
+        return new WebDriverWait(driver, Duration.ofSeconds(20))
                 .until(ExpectedConditions
                         .visibilityOfElementLocated(by));
     }
