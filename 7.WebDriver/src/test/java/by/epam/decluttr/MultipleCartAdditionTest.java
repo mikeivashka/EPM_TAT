@@ -27,7 +27,7 @@ class MultipleCartAdditionNotAuthorizedTest extends Assertions {
         System.setProperty("webdriver.chrome.driver", currentDir + "\\chromedriver.exe");
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));
+        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(40));
     }
 
     @AfterAll
@@ -71,7 +71,7 @@ class MultipleCartAdditionNotAuthorizedTest extends Assertions {
         continueShoppingButton.click();
         assertFalse(modalBody.isDisplayed());
 
-        new WebDriverWait(driver, Duration.ofSeconds(15))
+        new WebDriverWait(driver, Duration.ofSeconds(45))
                 .until(ExpectedConditions
                         .textToBePresentInElementLocated(By
                                 .xpath("//span[contains(@class, 'stat')]"), inCartTotalWithFirstProduct.toString()
