@@ -5,3 +5,4 @@ bin
 .idea
 *.iml
 target
+3.CI_with_jenkins/*
