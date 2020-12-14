@@ -1,8 +1,9 @@
 package by.epam.framework.page;
 
+import lombok.SneakyThrows;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 public class CartPage extends AbstractPage {
 
@@ -10,8 +11,9 @@ public class CartPage extends AbstractPage {
 
     private final By elementPriceLocator = By.className("basket__amount");
 
+    private final By inCartTotalLocator = By.xpath("//div[contains(@class, 'basket-total')]");
 
-    protected CartPage(WebDriver driver) {
+    protected CartPage(RemoteWebDriver driver) {
         super(driver);
     }
 
@@ -19,6 +21,9 @@ public class CartPage extends AbstractPage {
     public CartPage openPage() {
         driver.get(CART_PAGE_URL);
         return this;
+    }
+
+    public Integer inCartDifferentItemsCount(){
     }
 
     public Integer getAmountOfProductWithIndex(Integer index) {
@@ -34,11 +39,24 @@ public class CartPage extends AbstractPage {
         );
     }
 
+    public Double inCartTotal() {
+        return Double.valueOf(driver
+                .findElement(inCartTotalLocator)
+                .getText()
+                .transform(s ->
+                        s = s.substring(s.indexOf("$") + 1, s.indexOf(".") + 3)
+                                .replace(",", ""))
+        );
+    }
+
     private WebElement getInputByIndex(Integer index) {
         return driver.findElement(By.id("order_line_items_attributes_" + index + "_quantity"));
     }
 
+    @SneakyThrows
     public void setAmountOfProductAtIndex(Integer index, Integer amount) {
-        getInputByIndex(index).sendKeys(amount.toString());
+        setAttribute(getInputByIndex(index), "value", amount.toString());
+        getInputByIndex(index).submit();
+        waitForDocumentReadyState();
     }
 }

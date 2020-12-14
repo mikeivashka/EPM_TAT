@@ -7,12 +7,15 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.Listeners;
+
+import java.rmi.Remote;
 
 @Listeners({TestListener.class})
 public class CommonConditions extends Assertions {
 
-    protected WebDriver driver;
+    protected RemoteWebDriver driver;
 
 
     @BeforeEach

@@ -2,6 +2,7 @@ package by.epam.framework.page;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -30,7 +31,7 @@ public class CategoryPage extends AbstractPage {
     @FindBy(xpath = "//button[text()=' >> ']")
     private WebElement submitFilterButton;
 
-    public CategoryPage(WebDriver driver) {
+    public CategoryPage(RemoteWebDriver driver) {
         super(driver);
     }
 
