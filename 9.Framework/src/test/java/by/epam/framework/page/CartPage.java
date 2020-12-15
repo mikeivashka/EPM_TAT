@@ -6,10 +6,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOfAllElementsLocatedBy;
-import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOfElementLocated;
+import static org.openqa.selenium.support.ui.ExpectedConditions.*;
 
-public class CartPage extends AbstractPage {
+public final class CartPage extends AbstractPage {
 
     public static final String CART_PAGE_URL = "https://www.decluttr.com/us/store/cart";
 
@@ -22,6 +21,12 @@ public class CartPage extends AbstractPage {
     private final By emptyCartNotifierLocator = By.xpath("//div[@class='callout primary']");
 
     private final By continueShoppingButtonLocator = By.xpath("//a[text()='Continue shopping']");
+
+    private final By inStockLimitLocator = By.xpath("//span[contains(translate(text(), 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'),'in stock')]");
+
+    private final By lowStockAlertLocator = By.xpath("//div[@class='callout alert']/ul/li");
+
+    private final By checkoutButtonLocator = By.id("checkout-btn2");
 
     protected CartPage(RemoteWebDriver driver) {
         super(driver);
@@ -85,13 +90,37 @@ public class CartPage extends AbstractPage {
         return new CategoryPage(driver);
     }
 
+    public Integer getInStockForProductWithIndex(Integer index) {
+        waitForDocumentReadyState();
+        return Integer.parseInt(new WebDriverWait(driver, WAIT_TIMEOUT_SECONDS)
+                .until(presenceOfAllElementsLocatedBy(inStockLimitLocator))
+                .get(index)
+                .getText()
+                .transform(s -> {
+                    s = s.toLowerCase();
+                    return s.substring(s.indexOf(" in stock") - 1, s.indexOf(" in stock"));
+                }));
+    }
+
+    public String lineItemsQuantityWarning(){
+        return new WebDriverWait(driver, WAIT_TIMEOUT_SECONDS)
+                .until(visibilityOfElementLocated(lowStockAlertLocator))
+                .getText();
+    }
+
+    public LoginPage checkoutUnAuthorized(){
+        driver.findElement(checkoutButtonLocator).click();
+        return new LoginPage(driver);
+    }
+
     private WebElement getInputByIndex(Integer index) {
         return driver.findElement(By.id("order_line_items_attributes_" + index + "_quantity"));
     }
 
     @SneakyThrows
-    public void setAmountOfProductAtIndex(Integer index, Integer amount) {
+    public CartPage setAmountOfProductAtIndex(Integer index, Integer amount) {
         setAttribute(getInputByIndex(index), "value", amount.toString());
         getInputByIndex(index).submit();
+        return this;
     }
 }

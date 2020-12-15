@@ -41,6 +41,7 @@ public class ProductPage extends AbstractPage {
     }
 
     public CartPage clickCheckoutButton() {
+
         WebElement checkoutButton = new WebDriverWait(driver, Duration.ofSeconds(15))
                 .until(ExpectedConditions
                         .visibilityOfElementLocated(checkoutButtonLocator));
