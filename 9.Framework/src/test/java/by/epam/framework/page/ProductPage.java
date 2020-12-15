@@ -3,7 +3,6 @@ package by.epam.framework.page;
 import by.epam.framework.service.TestDataReader;
 import lombok.SneakyThrows;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.FindBy;
@@ -16,22 +15,29 @@ import java.util.Arrays;
 
 public class ProductPage extends AbstractPage {
 
-    private final By checkoutButtonLocator = By.linkText("Checkout Now");
+    private final By checkoutButtonLocator = By.partialLinkText("Checkout Now");
+
     @FindBy(name = "button")
     private WebElement addToCartButton;
+
 
     public ProductPage(RemoteWebDriver driver) {
         super(driver);
     }
 
     public ProductPage addAllProductsFromPropertiesToCart() {
-        System.out.println(System.getProperty("environment"));
         String[] productPageUrls = TestDataReader.getProductPagesLinksArray();
         Arrays.stream(productPageUrls).forEach(p -> {
             driver.get(p);
             addToCartButton.click();
         });
         return new ProductPage(driver);
+    }
+
+    public ProductPage addLowStockProductFromPropertiesToCart() {
+        driver.get(TestDataReader.getTestData("testdata.product.pages.low-in-stock"));
+        addToCartButton.click();
+        return this;
     }
 
     public CartPage clickCheckoutButton() {

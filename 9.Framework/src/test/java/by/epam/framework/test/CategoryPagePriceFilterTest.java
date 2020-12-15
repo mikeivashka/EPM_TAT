@@ -1,6 +1,7 @@
 package by.epam.framework.test;
 
 import by.epam.framework.page.CategoryPage;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
@@ -8,7 +9,8 @@ import java.util.List;
 
 class CategoryPagePriceFilterTest extends CommonConditions {
 
-    @ParameterizedTest(name = "decluttr-10")
+    @DisplayName("decluttr-10")
+    @ParameterizedTest
     @CsvSource(value = {"400,800"})
     void categoryPagePriceFilterTest(int minPriceValue, int maxPriceValue) {
         var categoryPage = new CategoryPage(driver);

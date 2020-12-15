@@ -15,7 +15,6 @@ public class CategoryPage extends AbstractPage {
 
     private static final String CATEGORY_PAGE_URL = "https://www.decluttr.com/us/store/category/cell-phones/apple/";
 
-
     @FindBy(xpath = "//result//h5")
     private List<WebElement> filteredProductsPrices;
 
@@ -89,6 +88,7 @@ public class CategoryPage extends AbstractPage {
     @Override
     public CategoryPage openPage() {
         driver.get(CATEGORY_PAGE_URL);
+        waitForDocumentReadyState();
         return this;
     }
 }

@@ -4,14 +4,24 @@ import lombok.SneakyThrows;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOfAllElementsLocatedBy;
+import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOfElementLocated;
 
 public class CartPage extends AbstractPage {
 
     public static final String CART_PAGE_URL = "https://www.decluttr.com/us/store/cart";
 
-    private final By elementPriceLocator = By.className("basket__amount");
+    private final By elementPriceLocator = By.xpath("//div[@class='basket__amount']/strong");
 
-    private final By inCartTotalLocator = By.xpath("//div[contains(@class, 'basket-total')]");
+    private final By inCartTotalLocator = By.xpath("//li[@id='link-to-cart']/a/span | //div[@class='ddl-header__basket-total']");
+
+    private final By removeElementButtonLocator = By.xpath("//button[contains(@id, 'delete_line_item_')]");
+
+    private final By emptyCartNotifierLocator = By.xpath("//div[@class='callout primary']");
+
+    private final By continueShoppingButtonLocator = By.xpath("//a[text()='Continue shopping']");
 
     protected CartPage(RemoteWebDriver driver) {
         super(driver);
@@ -23,7 +33,14 @@ public class CartPage extends AbstractPage {
         return this;
     }
 
-    public Integer inCartDifferentItemsCount(){
+    public Integer countDifferentItemsInCart() {
+        return driver.findElements(elementPriceLocator).size();
+    }
+
+    public CartPage clickRemoveButtonOfProductWithIndex(Integer index) {
+        waitForDocumentReadyState();
+        driver.findElements(removeElementButtonLocator).get(index).click();
+        return this;
     }
 
     public Integer getAmountOfProductWithIndex(Integer index) {
@@ -32,21 +49,40 @@ public class CartPage extends AbstractPage {
 
     public Double getPriceOfProductWithIndex(Integer index) {
         return Double.valueOf(
-                driver.findElements(elementPriceLocator)
+                new WebDriverWait(driver, WAIT_TIMEOUT_SECONDS)
+                        .until(visibilityOfAllElementsLocatedBy(elementPriceLocator)
+                        )
                         .get(index)
                         .getText()
                         .substring(1)
         );
     }
 
+    public boolean isCartEmpty() {
+        return getEmptyCartNotifierText().contains("Your cart is empty");
+    }
+
+    public String getEmptyCartNotifierText() {
+        return driver.findElement(emptyCartNotifierLocator).getText();
+    }
+
     public Double inCartTotal() {
-        return Double.valueOf(driver
-                .findElement(inCartTotalLocator)
-                .getText()
-                .transform(s ->
-                        s = s.substring(s.indexOf("$") + 1, s.indexOf(".") + 3)
-                                .replace(",", ""))
+        return Double.valueOf(
+                new WebDriverWait(driver, WAIT_TIMEOUT_SECONDS)
+                        .until(visibilityOfElementLocated(inCartTotalLocator))
+                        .getText()
+                        .transform(s ->
+                                s = s.substring(s.indexOf("$") + 1, s.indexOf(".") + 3)
+                                        .replace(",", ""))
         );
+    }
+
+    public CategoryPage clickContinueShoppingButton() {
+        waitForDocumentReadyState();
+        new WebDriverWait(driver, WAIT_TIMEOUT_SECONDS)
+                .until(visibilityOfElementLocated(continueShoppingButtonLocator))
+                .click();
+        return new CategoryPage(driver);
     }
 
     private WebElement getInputByIndex(Integer index) {
@@ -57,6 +93,5 @@ public class CartPage extends AbstractPage {
     public void setAmountOfProductAtIndex(Integer index, Integer amount) {
         setAttribute(getInputByIndex(index), "value", amount.toString());
         getInputByIndex(index).submit();
-        waitForDocumentReadyState();
     }
 }
