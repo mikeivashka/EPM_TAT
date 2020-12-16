@@ -3,12 +3,13 @@ package by.epam.framework.test;
 import by.epam.framework.page.CartPage;
 import by.epam.framework.page.LoginPage;
 import by.epam.framework.page.ProductPage;
-import lombok.SneakyThrows;
+import lombok.extern.java.Log;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+@Log
 class LowStockNotificationTest extends CommonConditions {
-    @SneakyThrows
+
     @DisplayName("decluttr-6")
     @Test
     void lowStockNotificationTest() {

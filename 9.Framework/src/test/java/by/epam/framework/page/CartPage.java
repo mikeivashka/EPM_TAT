@@ -6,7 +6,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import static org.openqa.selenium.support.ui.ExpectedConditions.*;
+import static org.openqa.selenium.support.ui.ExpectedConditions.presenceOfAllElementsLocatedBy;
+import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOfElementLocated;
 
 public final class CartPage extends AbstractPage {
 
@@ -22,19 +23,20 @@ public final class CartPage extends AbstractPage {
 
     private final By continueShoppingButtonLocator = By.xpath("//a[text()='Continue shopping']");
 
-    private final By inStockLimitLocator = By.xpath("//span[contains(translate(text(), 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'),'in stock')]");
+    private final By inStockLimitLocator = By.xpath("//span[contains(text(),'stock')] | //span[contains(text(),'Stock')]");
 
     private final By lowStockAlertLocator = By.xpath("//div[@class='callout alert']/ul/li");
 
     private final By checkoutButtonLocator = By.id("checkout-btn2");
 
-    protected CartPage(RemoteWebDriver driver) {
+    public CartPage(RemoteWebDriver driver) {
         super(driver);
     }
 
     @Override
     public CartPage openPage() {
         driver.get(CART_PAGE_URL);
+        setRequiredCookies();
         return this;
     }
 
@@ -55,7 +57,7 @@ public final class CartPage extends AbstractPage {
     public Double getPriceOfProductWithIndex(Integer index) {
         return Double.valueOf(
                 new WebDriverWait(driver, WAIT_TIMEOUT_SECONDS)
-                        .until(visibilityOfAllElementsLocatedBy(elementPriceLocator)
+                        .until(presenceOfAllElementsLocatedBy(elementPriceLocator)
                         )
                         .get(index)
                         .getText()
@@ -72,6 +74,7 @@ public final class CartPage extends AbstractPage {
     }
 
     public Double inCartTotal() {
+        waitForDocumentReadyState();
         return Double.valueOf(
                 new WebDriverWait(driver, WAIT_TIMEOUT_SECONDS)
                         .until(visibilityOfElementLocated(inCartTotalLocator))
@@ -93,22 +96,22 @@ public final class CartPage extends AbstractPage {
     public Integer getInStockForProductWithIndex(Integer index) {
         waitForDocumentReadyState();
         return Integer.parseInt(new WebDriverWait(driver, WAIT_TIMEOUT_SECONDS)
-                .until(presenceOfAllElementsLocatedBy(inStockLimitLocator))
-                .get(index)
+                .until(visibilityOfElementLocated(inStockLimitLocator))
                 .getText()
                 .transform(s -> {
                     s = s.toLowerCase();
                     return s.substring(s.indexOf(" in stock") - 1, s.indexOf(" in stock"));
                 }));
+
     }
 
-    public String lineItemsQuantityWarning(){
+    public String lineItemsQuantityWarning() {
         return new WebDriverWait(driver, WAIT_TIMEOUT_SECONDS)
                 .until(visibilityOfElementLocated(lowStockAlertLocator))
                 .getText();
     }
 
-    public LoginPage checkoutUnAuthorized(){
+    public LoginPage checkoutUnAuthorized() {
         driver.findElement(checkoutButtonLocator).click();
         return new LoginPage(driver);
     }

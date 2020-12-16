@@ -10,8 +10,8 @@ import java.util.List;
 class CategoryPagePriceFilterTest extends CommonConditions {
 
     @DisplayName("decluttr-10")
-    @ParameterizedTest
     @CsvSource(value = {"400,800"})
+    @ParameterizedTest
     void categoryPagePriceFilterTest(int minPriceValue, int maxPriceValue) {
         var categoryPage = new CategoryPage(driver);
         List<Double> pricesAfterFiltering = categoryPage

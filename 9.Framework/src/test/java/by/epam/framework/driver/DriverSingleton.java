@@ -1,11 +1,12 @@
 package by.epam.framework.driver;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
-import java.util.Arrays;
+import java.util.Collections;
 
 public class DriverSingleton {
     private static RemoteWebDriver driver;
@@ -19,11 +20,10 @@ public class DriverSingleton {
             WebDriverManager.chromedriver().setup();
             ChromeOptions options = new ChromeOptions();
             options.setExperimentalOption("excludeSwitches",
-                    Arrays.asList("disable-popup-blocking"));
-            options.addArguments("disable-infobars", "--window-size=1700,1080");
-            //options.addArguments("user-data-dir=C:\\Users\\tanki\\AppData\\Local\\Google\\Chrome\\User Data\\Default");
+                    Collections.singletonList("disable-popup-blocking"));
+            options.addArguments("disable-infobars");
             driver = new ChromeDriver(options);
-            //driver.manage().window().maximize();
+            driver.manage().window().setSize(new Dimension(1400, 800));
         }
         return driver;
     }

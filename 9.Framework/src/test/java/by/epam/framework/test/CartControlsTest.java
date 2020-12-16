@@ -2,16 +2,17 @@ package by.epam.framework.test;
 
 import by.epam.framework.page.CartPage;
 import by.epam.framework.page.ProductPage;
+import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-
+@Slf4j
 class CartControlsTest extends CommonConditions {
 
     static final String DEFAULT_CATEGORY_PAGE_URL = "https://www.decluttr.com/us/store/category/";
 
-    @Test
     @DisplayName("decluttr-5")
+    @Test
     void cartControlsTest() {
         CartPage cartPage = new ProductPage(driver)
                 .addAllProductsFromPropertiesToCart()
@@ -36,6 +37,5 @@ class CartControlsTest extends CommonConditions {
 
         cartPage.clickContinueShoppingButton();
         assertEquals(DEFAULT_CATEGORY_PAGE_URL, driver.getCurrentUrl());
-
     }
 }
