@@ -3,17 +3,15 @@ package by.epam.framework.test;
 import by.epam.framework.page.CartPage;
 import by.epam.framework.page.ProductPage;
 import lombok.extern.slf4j.Slf4j;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 @Slf4j
-class CartControlsTest extends CommonConditions {
+public class CartControlsTest extends CommonConditions {
 
     static final String DEFAULT_CATEGORY_PAGE_URL = "https://www.decluttr.com/us/store/category/";
 
-    @DisplayName("decluttr-5")
     @Test
-    void cartControlsTest() {
+    public void cartControlsTest() {
         CartPage cartPage = new ProductPage(driver)
                 .addAllProductsFromPropertiesToCart()
                 .clickCheckoutButton();
@@ -24,11 +22,11 @@ class CartControlsTest extends CommonConditions {
 
         inCartTotal = cartPage.inCartTotal();
         cartPage.setAmountOfProductAtIndex(0, 1);
-        assertEquals(inCartTotal - firstProductPrice, cartPage.inCartTotal());
+        assertEquals(inCartTotal - firstProductPrice, (double) cartPage.inCartTotal(), 0.01);
 
         Integer differentItemsCount = cartPage.countDifferentItemsInCart();
         cartPage.setAmountOfProductAtIndex(0, 0);
-        assertEquals(differentItemsCount - 1, cartPage.countDifferentItemsInCart());
+        assertEquals(differentItemsCount - 1, (int) cartPage.countDifferentItemsInCart());
 
         while (!cartPage.isCartEmpty()) {
             cartPage.clickRemoveButtonOfProductWithIndex(0);

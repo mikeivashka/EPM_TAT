@@ -1,13 +1,9 @@
 package by.epam.framework.page;
 
 import by.epam.framework.service.TestDataReader;
-import org.openqa.selenium.Cookie;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.FindBy;
-
-import java.util.Arrays;
-import java.util.List;
 
 public class LoginPage extends AbstractPage {
 
@@ -29,12 +25,12 @@ public class LoginPage extends AbstractPage {
         super(driver);
     }
 
-    public LoginPage clickAcceptCookiesButton(){
+    public LoginPage clickAcceptCookiesButton() {
         acceptCookiesButton.click();
         return this;
     }
 
-    public CheckOutPage logInUserFromProperties(){
+    public CheckOutPage logInUserFromProperties() {
         String email = TestDataReader.getTestData("testdata.user.email");
         String password = TestDataReader.getTestData("testdata.user.password");
         emailInput.sendKeys(email);

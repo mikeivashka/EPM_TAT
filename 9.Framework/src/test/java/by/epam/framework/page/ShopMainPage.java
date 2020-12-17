@@ -86,7 +86,7 @@ public class ShopMainPage extends AbstractPage {
     public ShopMainPage clickSubmitFeedbackButton() {
         new WebDriverWait(driver, WAIT_TIMEOUT_SECONDS)
                 .until(ExpectedConditions
-                        .presenceOfElementLocated(submitFeedbackButtonLocator)).click();
+                        .presenceOfElementLocated(submitFeedbackButtonLocator)).submit();
         return this;
     }
 

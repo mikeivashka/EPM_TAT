@@ -4,15 +4,13 @@ import by.epam.framework.page.CartPage;
 import by.epam.framework.page.LoginPage;
 import by.epam.framework.page.ProductPage;
 import lombok.extern.java.Log;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 @Log
-class LowStockNotificationTest extends CommonConditions {
+public class LowStockNotificationTest extends CommonConditions {
 
-    @DisplayName("decluttr-6")
     @Test
-    void lowStockNotificationTest() {
+    public void lowStockNotificationTest() {
         CartPage cartPage = new ProductPage(driver)
                 .addLowStockProductFromPropertiesToCart()
                 .clickCheckoutButton();

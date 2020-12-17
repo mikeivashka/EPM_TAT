@@ -13,7 +13,7 @@ public class TestDataReader {
         int testDataSize = Integer.parseInt(getTestData("testdata.product.pages.count"));
         String[] allPages = new String[testDataSize];
         for (int i = 0; i < testDataSize; i++) {
-            allPages[i]=getTestData("testdata.product.pages." + (i+1));
+            allPages[i] = getTestData("testdata.product.pages." + (i + 1));
         }
         return allPages;
     }
