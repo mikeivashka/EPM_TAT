@@ -2,6 +2,7 @@ package by.epam.framework.service;
 
 import by.epam.framework.driver.DriverSingleton;
 import lombok.extern.log4j.Log4j2;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.io.FileUtils;
 import org.junit.rules.TestWatcher;
 import org.junit.runner.Description;
@@ -15,7 +16,7 @@ import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.Date;
 
-@Log4j2
+@Slf4j
 public class ScreenshotOnFailure extends TestWatcher {
 
     private final WebDriver driver;

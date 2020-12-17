@@ -1,18 +1,19 @@
 package by.epam.framework.test;
 
+import by.epam.framework.driver.DriverSingleton;
 import by.epam.framework.page.*;
 import by.epam.framework.service.TestDataReader;
-import org.junit.After;
+import org.junit.AfterClass;
 import org.junit.Test;
 import org.junit.jupiter.api.DisplayName;
 
 
 public class CartForwardAfterLoginTest extends CommonConditions {
 
-    @After
-    public void cleanUp() {
+    @AfterClass
+    public static void cleanUp() {
         clearUserCart();
-        driver.quit();
+        DriverSingleton.getDriver().quit();
     }
 
     @DisplayName("decluttr-7")
