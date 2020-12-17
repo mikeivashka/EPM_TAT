@@ -30,13 +30,12 @@ public class LoginPage extends AbstractPage {
         return this;
     }
 
-    public CheckOutPage logInUserFromProperties() {
+    public void logInUserFromProperties() {
         String email = TestDataReader.getTestData("testdata.user.email");
         String password = TestDataReader.getTestData("testdata.user.password");
         emailInput.sendKeys(email);
         passwordInput.sendKeys(password);
         signInButton.click();
-        return new CheckOutPage(driver);
     }
 
     @Override

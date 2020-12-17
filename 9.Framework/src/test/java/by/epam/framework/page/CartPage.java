@@ -4,6 +4,7 @@ import lombok.SneakyThrows;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import static org.openqa.selenium.support.ui.ExpectedConditions.presenceOfAllElementsLocatedBy;
@@ -27,6 +28,8 @@ public final class CartPage extends AbstractPage {
 
     private final By checkoutButtonLocator = By.id("checkout-btn2");
 
+    private final By totalItemsInCartLocator = By.xpath("(//*[contains(text(), 'Cart (')])[1]");
+
     public CartPage(RemoteWebDriver driver) {
         super(driver);
     }
@@ -36,6 +39,13 @@ public final class CartPage extends AbstractPage {
         driver.get(CART_PAGE_URL);
         setRequiredCookies();
         return this;
+    }
+
+    public Integer countTotalItemsInCart() {
+        String tagText = new WebDriverWait(driver, WAIT_TIMEOUT_SECONDS)
+                .until(ExpectedConditions
+                        .visibilityOfElementLocated(totalItemsInCartLocator)).getText();
+        return Integer.parseInt(tagText.transform(t -> t = t.substring(t.indexOf("(")+1, t.indexOf(")"))));
     }
 
     public Integer countDifferentItemsInCart() {

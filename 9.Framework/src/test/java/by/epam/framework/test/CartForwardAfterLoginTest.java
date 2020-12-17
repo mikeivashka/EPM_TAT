@@ -1,17 +1,18 @@
 package by.epam.framework.test;
 
-import by.epam.framework.page.CartPage;
-import by.epam.framework.page.CheckOutPage;
-import by.epam.framework.page.ProductPage;
+import by.epam.framework.page.*;
+import by.epam.framework.service.TestDataReader;
 import org.junit.After;
 import org.junit.Test;
 import org.junit.jupiter.api.DisplayName;
 
 
 public class CartForwardAfterLoginTest extends CommonConditions {
+
     @After
     public void cleanUp() {
         clearUserCart();
+        driver.quit();
     }
 
     @DisplayName("decluttr-7")
@@ -22,10 +23,28 @@ public class CartForwardAfterLoginTest extends CommonConditions {
                 .clickCheckoutButton();
         Double inCartTotal = cartPageBeforeAuth.inCartTotal();
         Integer differentItemsCount = cartPageBeforeAuth.countDifferentItemsInCart();
-
-        CheckOutPage checkOutPage = cartPageBeforeAuth
+        cartPageBeforeAuth
                 .checkoutUnAuthorized()
                 .logInUserFromProperties();
+        CheckOutPage checkOutPage = new CheckOutPage(driver);
+
         assertEquals(inCartTotal, checkOutPage.totalToPay(), 0.01);
+    }
+
+    @DisplayName("decluttr-8")
+    @Test
+    public void cartForwardToNotEmptyAfterLoginTest() {
+        new LoginPage(driver).openPage().logInUserFromProperties();
+        Integer inCartBeforeTest = new CartPage(driver).openPage().countTotalItemsInCart();
+        new ProfilePage(driver).openPage().logOut();
+
+        String addedProductUrl = TestDataReader.getTestData("testdata.product.page.common");
+        new ProductPage(driver)
+                .openPage(addedProductUrl)
+                .clickAddToCartButton()
+                .clickContinueShoppingButton();
+        new LoginPage(driver).openPage().logInUserFromProperties();
+        CartPage cartPage = new CartPage(driver).openPage();
+        assertEquals(inCartBeforeTest + 1, (int) cartPage.countTotalItemsInCart());
     }
 }

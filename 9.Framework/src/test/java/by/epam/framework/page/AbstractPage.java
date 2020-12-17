@@ -24,12 +24,19 @@ public abstract class AbstractPage {
 
     protected final By inCartTotalLocator = By.xpath("(//*[@class='ddl-header__basket-total'])[1] | //a[contains(@class, 'cart-info full')]/span");
 
+    protected final By linkToLoginPageLocator = By.id("link-to-login");
+
     protected AbstractPage(RemoteWebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
 
     public abstract AbstractPage openPage();
+
+    public LoginPage clickLoginLink(){
+        driver.findElement(linkToLoginPageLocator).click();
+        return new LoginPage(driver);
+    }
 
     protected void setRequiredCookies() {
         driver.manage().deleteCookieNamed("sessionExperiments");
