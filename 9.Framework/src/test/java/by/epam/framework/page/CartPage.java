@@ -15,8 +15,6 @@ public final class CartPage extends AbstractPage {
 
     private final By elementPriceLocator = By.xpath("//div[@class='basket__amount']/strong");
 
-    private final By inCartTotalLocator = By.xpath("//li[@id='link-to-cart']/a/span | //div[@class='ddl-header__basket-total']");
-
     private final By removeElementButtonLocator = By.xpath("//button[contains(@id, 'delete_line_item_')]");
 
     private final By emptyCartNotifierLocator = By.xpath("//div[@class='callout primary']");

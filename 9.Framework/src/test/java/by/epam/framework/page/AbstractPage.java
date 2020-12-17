@@ -1,6 +1,7 @@
 package by.epam.framework.page;
 
 import lombok.extern.java.Log;
+import org.openqa.selenium.By;
 import org.openqa.selenium.Cookie;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
@@ -20,6 +21,8 @@ public abstract class AbstractPage {
     protected RemoteWebDriver driver;
 
     public static final String BASIC_SHOP_URL = "https://www.decluttr.com/us/store/";
+
+    protected final By inCartTotalLocator = By.xpath("(//*[@class='ddl-header__basket-total'])[1] | //a[contains(@class, 'cart-info full')]/span");
 
     protected AbstractPage(RemoteWebDriver driver) {
         this.driver = driver;

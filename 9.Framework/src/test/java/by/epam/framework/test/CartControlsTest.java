@@ -4,12 +4,14 @@ import by.epam.framework.page.CartPage;
 import by.epam.framework.page.ProductPage;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
+import org.junit.jupiter.api.DisplayName;
 
 @Slf4j
 public class CartControlsTest extends CommonConditions {
 
     static final String DEFAULT_CATEGORY_PAGE_URL = "https://www.decluttr.com/us/store/category/";
 
+    @DisplayName("decluttr-5")
     @Test
     public void cartControlsTest() {
         CartPage cartPage = new ProductPage(driver)
@@ -22,7 +24,7 @@ public class CartControlsTest extends CommonConditions {
 
         inCartTotal = cartPage.inCartTotal();
         cartPage.setAmountOfProductAtIndex(0, 1);
-        assertEquals(inCartTotal - firstProductPrice, (double) cartPage.inCartTotal(), 0.01);
+        assertEquals(inCartTotal - firstProductPrice, cartPage.inCartTotal(), 0.01);
 
         Integer differentItemsCount = cartPage.countDifferentItemsInCart();
         cartPage.setAmountOfProductAtIndex(0, 0);

@@ -5,6 +5,7 @@ import by.epam.framework.page.CheckOutPage;
 import by.epam.framework.page.ProductPage;
 import org.junit.After;
 import org.junit.Test;
+import org.junit.jupiter.api.DisplayName;
 
 
 public class CartForwardAfterLoginTest extends CommonConditions {
@@ -13,6 +14,7 @@ public class CartForwardAfterLoginTest extends CommonConditions {
         clearUserCart();
     }
 
+    @DisplayName("decluttr-7")
     @Test
     public void cartForwardAfterLoginTest() {
         CartPage cartPageBeforeAuth = new ProductPage(driver)

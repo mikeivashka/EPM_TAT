@@ -2,6 +2,7 @@ package by.epam.framework.test;
 
 import by.epam.framework.page.CategoryPage;
 import org.junit.Test;
+import org.junit.jupiter.api.DisplayName;
 
 import java.util.List;
 
@@ -10,6 +11,7 @@ public class CategoryPagePriceFilterTest extends CommonConditions {
     private static final int minPriceValue = 400;
     private static final int maxPriceValue = 800;
 
+    @DisplayName("decluttr-10")
     @Test
     public void categoryPagePriceFilterTest() {
 
@@ -19,7 +21,7 @@ public class CategoryPagePriceFilterTest extends CommonConditions {
                 .setMinPrice(minPriceValue)
                 .setMaxPrice(maxPriceValue)
                 .submitFilters()
-                .allFilteredProductsPrices();
+                .allProductsPrices();
         assertTrue(pricesAfterFiltering.stream().noneMatch(p -> p < minPriceValue && p > maxPriceValue));
 
         String maxPriceValueAfterReload = categoryPage
@@ -31,7 +33,7 @@ public class CategoryPagePriceFilterTest extends CommonConditions {
         List<Double> pricesAfterInvalidFilter = categoryPage
                 .setMinPrice(10000)
                 .submitFilters()
-                .allFilteredProductsPrices();
+                .allProductsPrices();
         assertTrue(pricesAfterInvalidFilter.isEmpty());
 
         categoryPage.clickGoBackButton();
